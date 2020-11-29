@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     include PostsHelper
-    before_action :set_post, only: %i[show edit]
+    before_action :set_post, only: %i[show edit update edit destroy]
     before_action :authenticate_user!, only: [:new]
     def index
         @posts = Post.all
@@ -26,10 +26,13 @@ class PostsController < ApplicationController
     def edit; end
 
     def update
-        
+        @post.update(post_params)
+        redirect_to public_index_path
     end
 
     def destroy
+        Post.find(params[:id]).destroy
+        redirect_to public_index_path
     end
     
 end
