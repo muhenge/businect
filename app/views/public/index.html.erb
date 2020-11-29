@@ -1,5 +1,6 @@
 <%= link_to  "Connect", new_user_session_path %>
 <%= link_to  "Company connect", new_company_session_path %>
+<%= link_to "Logout", destroy_user_session_path, method: :delete%>
 
 <%= current_user.email.downcase %>
 
