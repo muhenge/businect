@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'public/private'
   devise_for :users
   root to: "public#index"
+  resources :posts
 end
