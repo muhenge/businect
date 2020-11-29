@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     include PostsHelper
-    before_action :set_post, only: [:show]
+    before_action :set_post, only: %i[show edit]
     before_action :authenticate_user!, only: [:new]
     def index
         @posts = Post.all
@@ -19,7 +19,17 @@ class PostsController < ApplicationController
             flash[:notice] = 'Post successful'
         else
             flash[:alert] = 'Not successfule'
-            render 'new'
+            render :new
         end
     end
+
+    def edit; end
+
+    def update
+        
+    end
+
+    def destroy
+    end
+    
 end
