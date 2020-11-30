@@ -1,8 +1,5 @@
 class TransitionController < ApplicationController
-  include UsersHelper
+  # include UsersHelper
   # before_action :set_user, only: [:show]
-
-  def show
-  end
-
+  def show; end
 end
