@@ -2,7 +2,8 @@
 <%= link_to  "Company connect", new_company_session_path %>
 <%= link_to "Logout", destroy_user_session_path, method: :delete%>
 
-<%= current_user.email.downcase %>
+<%= current_user.username.capitalize %><br>
+<%=  link_to "Edit profile", edit_user_registration_path(@current_user)%>
 
 <%= link_to 'Add a post', new_post_path %>
 
