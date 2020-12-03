@@ -1,6 +1,6 @@
 module CommentsHelper
     def post_params
-        params.require(:comment).permit(:content, :user_id)
+        params.require(:comment).permit(:text, :user_id)
     end
 
     private

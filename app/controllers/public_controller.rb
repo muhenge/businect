@@ -8,6 +8,5 @@ class PublicController < ApplicationController
     @posts = Post.all
   end
 
-  def private
-  end
+  def private; end
 end
