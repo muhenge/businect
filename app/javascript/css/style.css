@@ -3,5 +3,11 @@
     top: 5% !important;
 }
 
-.login {
+.sign-up {
+    margin-top: 20vh;
+    padding:0 75px 0 75px;
+}
+
+errors {
+    font-size: .75rem !important;
 }
