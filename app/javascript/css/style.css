@@ -24,3 +24,9 @@ errors {
     margin-top: 12px;
     border-radius: 9px;
 }
+
+.post-widgets {
+    color: green;
+    margin-top:35px;
+    font-weight:small;
+}

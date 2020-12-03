@@ -13,7 +13,15 @@
         <div class="col s12 m12 l8 post-container">
             <% @posts.each do |post| %>
                 <div class="post">
-                    <%= post.content %>
+                    <%= post.content %><br>
+                    <div class="row post-widgets">
+                        <div class="col s6 l6 m6">
+                            <%= post.user.username.capitalize %>
+                        </div>
+                        <div class="col s6 l6 m6">
+                        <%= post.created_at %>
+                        </div>
+                    </div>
                 </div>
             <%end%>
         </div>
