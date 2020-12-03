@@ -11,3 +11,14 @@
 errors {
     font-size: .75rem !important;
 }
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.post {
+    padding: 12px;
+    border: 1px solid grey;
+}

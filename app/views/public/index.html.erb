@@ -6,15 +6,17 @@
 <%=  link_to "Edit profile", edit_user_registration_path(@current_user)%>
 
 <%= link_to 'Add a post', new_post_path %>
-
-<% @posts.each do |post| %>
-    <%= post.content %>
-    <%= link_to 'Read', post_path(post) %>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%end%>
-<div class="container">
+<div class="container center-align">
     <div class="row">
-        <div class="col ">
+        <div class="col l1 hide-on-med-and-down">
+        </div>
+        <div class="col s12 m12 l8 post-container">
+            <% @posts.each do |post| %>
+                <div class="post">
+                    <%= post.content %>
+                </div>
+            <%end%>
+        </div>
+        <div class="col hide-on-med-and-down l1"></div>
     </div>
 </div>
