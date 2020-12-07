@@ -1,6 +1,7 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<div class="container">
+  <div class="row edit-signup">
+  <h2>Edit</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -15,12 +16,12 @@
 
    <div class="field">
     <%= f.label :bio %><br />
-    <%= f.text_field :bio, autofocus: true %>
+    <%= f.text_area :bio, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :about %><br />
-    <%= f.text_field :about, autofocus: true %>
+    <%= f.text_area :about, autofocus: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -47,12 +48,14 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update",class:"btn " %>
   </div>
-<% end %>
+  <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn #f44336 red" %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back,class:"btn" %>
+</div>
+</div>
