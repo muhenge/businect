@@ -38,3 +38,13 @@ errors {
 .edit-signup {
     padding: 0 150px 0 150px;
 }
+
+textarea {
+    border: 1px solid seagreen;
+    border-radius: 3px;
+    padding: 12px;
+}
+
+textarea:focus{
+    border: 2px solid seagreen;
+}
