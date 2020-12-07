@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 
     def vote
       @post.upvote_by current_user
-      redirect_to article_path(@article)
+      redirect_back fallback_location: root_path
     end
     
 end
