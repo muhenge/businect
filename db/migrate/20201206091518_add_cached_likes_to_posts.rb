@@ -8,5 +8,6 @@ class AddCachedLikesToPosts < ActiveRecord::Migration[6.0]
       t.integer :cached_weighted_score, default: 0
       t.integer :cached_weighted_total, default: 0
       t.float :cached_weighted_average, default: 0.0
+    end
   end
 end

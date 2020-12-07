@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     member do
       put "like" => "posts#vote"
     end
+    
   end
   resources :comments
-  resources :users
+  resources :users do
+    resources :posts, only: [:index]
+  end
+  get 'users/:id/user_posts' => 'users#user_posts', :as => :users_posts
 end
