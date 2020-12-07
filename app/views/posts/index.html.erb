@@ -16,6 +16,7 @@
         </div>
             <% @posts.each do |post| %>
                 <div class="post">
+          <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%>
                     <%= post.content %><br>
                     <div class="row post-widgets">
                         <div class="col s6 l6 m6">
