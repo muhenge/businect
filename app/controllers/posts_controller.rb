@@ -16,11 +16,12 @@ class PostsController < ApplicationController
 
     def create
         @post = current_user.posts.build(post_params)
+
         if @post.save
             redirect_to public_index_path
             flash[:notice] = 'Post successful'
         else
-            flash[:alert] = 'Not successfule'
+            flash[:alert] = 'Not successfull'
             render :new
         end
     end
