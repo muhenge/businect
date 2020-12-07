@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     end
   end
   root to: "public#index"
-  resources :posts
+  resources :posts do
+    member do
+      put "like" => "posts#vote"
+    end
+  end
   resources :comments
-  # resources :users
+  resources :users
 end
