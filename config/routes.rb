@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
  
-  root to: "public#index"
+  root to: "posts#index"
 
   resources :posts do
     member do
@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :posts, only: [:index]
   end
+
+  resources :friendships, only: [:create, :destroy]
+
 
   get 'users/:id/user_posts' => 'users#user_posts', :as => :users_posts
 end

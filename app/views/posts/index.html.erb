@@ -1,11 +1,28 @@
-<%= link_to  "Connect", new_user_session_path %>
-<%= link_to  "Company connect", new_company_session_path %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete%>
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+<% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+<%else%>
+    <%= link_to  "Login", new_user_session_path %>
+<%end%>
 
-<%= current_user.username.capitalize %><br>
+<%= current_user.username.capitalize %><
 <%=  link_to "Edit profile", edit_user_registration_path(@current_user)%>
-
-<%= link_to 'Add a post', new_post_path %>
 <div class="container center-align">
     <div class="row">
         <div class="col l1 hide-on-med-and-down">
