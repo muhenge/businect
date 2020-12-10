@@ -19,8 +19,11 @@
         </div>
             <% @posts.each do |post| %>
                 <div class="post">
+                <%= link_to post_path(post), :action => 'go' do %>
                 <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%>
                     <%= post.content %><br>
+                <%end%>
+
                     <div class="row post-widgets">
                         <div class="col s6 l6 m6">
                             <%= post.user.username.capitalize %>
