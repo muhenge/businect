@@ -1,19 +1,6 @@
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
 <nav>
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-  </div>
+ <%= current_user.username.capitalize %>
+
 </nav>
 <% if user_signed_in? %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete%>
@@ -21,7 +8,6 @@
     <%= link_to  "Login", new_user_session_path %>
 <%end%>
 
-<%= current_user.username.capitalize %><
 <%=  link_to "Edit profile", edit_user_registration_path(@current_user)%>
 <div class="container center-align">
     <div class="row">
@@ -33,7 +19,7 @@
         </div>
             <% @posts.each do |post| %>
                 <div class="post">
-          <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%>
+                <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%>
                     <%= post.content %><br>
                     <div class="row post-widgets">
                         <div class="col s6 l6 m6">

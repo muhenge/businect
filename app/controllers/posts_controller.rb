@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
     include PostsHelper
+    include UsersHelper
+    before_action :set_user, only: %i[show]
     before_action :set_post, only: %i[show edit update edit destroy vote]
     before_action :authenticate_user!, only: %i[new index vote]
     before_action :current_user, only: %i[index upvote new create]
@@ -8,7 +10,9 @@ class PostsController < ApplicationController
         @posts = Post.all
     end
 
-    def show; end
+    def show
+        @post_user = @post.user
+    end
 
     def new
         @post = current_user.posts.build
