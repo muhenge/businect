@@ -5,4 +5,12 @@
     <%= user_post.content %>
 <%end%>
 
+
+
+<% if current_user %>
+    <%= render 'follow' %>
+<% end %>
+
+
+
 <%= render 'shared/relation' %>

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :friendships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   get 'users/:id/user_posts' => 'users#user_posts', :as => :users_posts
   
 end

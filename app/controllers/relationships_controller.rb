@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
     include UsersHelper
-    before_action :set_user, only: [:create]
+    # before_action :set_user, only: [:create]
     before_action :authenticate_user!
     def create
         @user = User.find(params[:followed_id])
