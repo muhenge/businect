@@ -6,3 +6,4 @@
 <% end %>
 
  <%= image_tag(current_user.avatar,:class => "user-img responsive-img", alt: "user image") if current_user.avatar.attached?%>
+<%= render 'shared/relation' %>
