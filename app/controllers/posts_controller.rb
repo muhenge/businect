@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     include UsersHelper
     before_action :set_user, only: %i[show]
     before_action :set_post, only: %i[show edit update edit destroy vote]
-    before_action :authenticate_user!, only: %i[new index vote]
+    before_action :authenticate_user!, only: %i[new show index vote]
     before_action :current_user, only: %i[index upvote new create]
 
     def index
@@ -12,6 +12,8 @@ class PostsController < ApplicationController
 
     def show
         @post_user = @post.user
+        @comment = current_user.comments.build
+        @comments = @post.comments
     end
 
     def new

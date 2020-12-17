@@ -1,11 +1,11 @@
 module CommentsHelper
-    def post_params
-        params.require(:comment).permit(:text, :user_id)
+    def comment_params
+        params.require(:comment).permit(:text, :user_id, :post_id)
     end
 
     private
 
-    def set_post
-        @post = Comment.find(params[:id])
+    def set_comment
+        @comment = Comment.find(params[:id])
     end
 end

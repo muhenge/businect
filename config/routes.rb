@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
- 
+
   root to: "posts#index"
 
   resources :posts do
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       put "like" => "posts#vote"
     end
     resources :users
+    post 'comments', to: 'comments#create'
   end
 
   resources :comments

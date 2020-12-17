@@ -7,3 +7,14 @@
 
  <%= image_tag(current_user.avatar,:class => "user-img responsive-img", alt: "user image") if current_user.avatar.attached?%>
 <%= render 'shared/relation' %>
+
+<%= form_with model: [@post, @comment], local: true do |f| %>
+    <%= f.text_area :text %>
+    <%= f.submit "Comment", class:"btn" %>
+<% end %>
+
+
+<% @comments.each do |comment| %>
+    <%= comment.text %>
+    <%= comment.created_at.strftime("%H:%M-%Z") %>
+<% end %>
