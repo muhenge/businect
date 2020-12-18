@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
     resources :users
     post 'comments', to: 'comments#create'
+    
   end
 
   resources :comments

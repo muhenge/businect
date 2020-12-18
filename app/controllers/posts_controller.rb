@@ -11,8 +11,8 @@ class PostsController < ApplicationController
     end
 
     def show
+        @comment = Comment.new
         @post_user = @post.user
-        @comment = current_user.comments.build
         @comments = @post.comments
     end
 
@@ -25,9 +25,9 @@ class PostsController < ApplicationController
 
         if @post.save
             redirect_to public_index_path
-            flash[:notice] = 'Post successful'
+            flash[:notice] = 'Posted'
         else
-            flash[:alert] = 'Not successfull'
+            flash[:alert] = 'Failed'
             render :new
         end
     end

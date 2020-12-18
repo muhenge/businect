@@ -13,8 +13,8 @@
     <%= f.submit "Comment", class:"btn" %>
 <% end %>
 
-
 <% @comments.each do |comment| %>
     <%= comment.text %>
     <%= comment.created_at.strftime("%H:%M-%Z") %>
+    <%= comment.user.username.capitalize %>
 <% end %>

@@ -1,19 +1,24 @@
 class CommentsController < ApplicationController
     include CommentsHelper
-
-    before_action :set_post
-    before_action :set_comment
-    before_action :authenticate_user!, only: [:new]
+    before_action :authenticate_user!
     
     def create
-        @comment = @post.comment.new(comment_params)
-        @user = current_user
+        @post = Post.find(params[:post_id])
+        @comment = @post.comments.new(comment_params)
+        @comment.user = current_user
         if @comment.save
-            redirect_to public_index_path
-            flash[:notice] = 'comment successful'
+            redirect_to post_path(@post)
         else
-            flash[:alert] = 'Not successfule'
-            render :new
+            render 'new'
         end
+        # @comment = @post.comment.new(comment_params)
+        # @user = current_user
+        # if @comment.save
+        #     redirect_to post_path(post)
+        #     flash[:notice] = 'Comments added'
+        # else
+        #     flash[:alert] = 'Failed'
+        #     render :new
+        # end
     end
 end
