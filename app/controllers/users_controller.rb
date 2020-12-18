@@ -13,6 +13,11 @@ class UsersController < ApplicationController
        #render plain: {posts: @posts.inspect, user: @user.inspect}
     end
 
+    def edit
+        @user_name = User.find(1)
+    end
+    
+
     def following
         @title = "Following"
         @user = User.find(params[:id])

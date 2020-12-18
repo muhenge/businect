@@ -13,6 +13,10 @@ nav {
 
 }
 
+select {
+    display: block !important;
+}
+
 .start {
     position: sticky !important;
     top: 5% !important;

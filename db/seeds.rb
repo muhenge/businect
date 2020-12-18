@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+tech = Interest.create(field_of_interest:'Software development')
+edu = Interest.create(field_of_interest:'Education')
+sc = Interest.create(field_of_interest:'Sciences')
+ent = Interest.create(field_of_interest:'Enterteinment')
