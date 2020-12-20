@@ -1,4 +1,4 @@
 <% @users.each do |user| %>
-    <%= user.username.capitalize %>
+    <%= link_to user.username.capitalize, user_path(user) %>
 <% end %>
 
