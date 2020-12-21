@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_175743) do
+ActiveRecord::Schema.define(version: 2020_12_21_100411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,6 +131,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_175743) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "interest_id"
+    t.string "busmodel"
     t.index ["about"], name: "index_users_on_about", unique: true
     t.index ["bio"], name: "index_users_on_bio", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
