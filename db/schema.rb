@@ -131,7 +131,6 @@ ActiveRecord::Schema.define(version: 2020_12_18_175743) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "interest_id"
     t.index ["about"], name: "index_users_on_about", unique: true
     t.index ["bio"], name: "index_users_on_bio", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
