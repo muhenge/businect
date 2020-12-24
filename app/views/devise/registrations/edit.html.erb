@@ -22,11 +22,6 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-   <div class="field">
-    <%= f.label :busmodel %><br />
-    <%= f.text_field :busmodel, autofocus: true, autocomplete: "busmodel" %>
-  </div>
-
   <div class="field">
     <%= f.label :interest, "Business field"  %><br />
     <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Select') %>

@@ -1,5 +1,6 @@
 <%= @user.username%>
 <%= @user.bio %>
+<%= @interest.user %>
 <%= image_tag(@user.avatar,:class => "responsive-img", alt: "user image") if @user.avatar.attached?%>
 <% @user.posts.each do |user_post| %>
     <%= user_post.content %>
@@ -10,5 +11,4 @@
     <% else %>
         <%= render 'follow' %>
     <% end %>
-
 <%= render 'shared/relation' %>

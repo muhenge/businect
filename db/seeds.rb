@@ -9,5 +9,3 @@ tech = Interest.create(field_of_interest:'Software development')
 edu = Interest.create(field_of_interest:'Education')
 sc = Interest.create(field_of_interest:'Sciences')
 ent = Interest.create(field_of_interest:'Enterteinment')
-
-busone = User.create(busmodel: 'Software development')
