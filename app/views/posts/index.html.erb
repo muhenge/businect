@@ -21,7 +21,7 @@
             <% @posts.each do |post| %>
                 <div class="post">
                 <%= link_to post_path(post), :action => 'go' do %>
-                <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%>
+                <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%><br>
                     <%= post.content %><br>
                 <%end%>
 
