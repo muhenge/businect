@@ -1,9 +1,0 @@
-class CreateInterests < ActiveRecord::Migration[6.0]
-  def change
-    create_table :interests do |t|
-      t.string :field_of_interest
-
-      t.timestamps
-    end
-  end
-end
