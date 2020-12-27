@@ -8,3 +8,7 @@
 # edu = Interest.create(field_of_interest:'Education')
 # sc = Interest.create(field_of_interest:'Sciences')
 # ent = Interest.create(field_of_interest:'Enterteinment')
+
+tech = User.create(field_of_interest: 'Software development')
+edu = User.create(field_of_interest: 'Education')
+
