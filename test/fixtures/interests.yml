@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field_of_interest: MyString
+
+two:
+  field_of_interest: MyString
