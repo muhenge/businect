@@ -24,7 +24,7 @@ class PostsController < ApplicationController
         @post = current_user.posts.build(post_params)
 
         if @post.save
-            redirect_to public_index_path
+            redirect_to posts_path
             flash[:notice] = 'Posted'
         else
             flash[:alert] = 'Failed'
@@ -36,12 +36,12 @@ class PostsController < ApplicationController
 
     def update
         @post.update(post_params)
-        redirect_to public_index_path
+        redirect_to posts_path
     end
 
     def destroy
         Post.find(params[:id]).destroy
-        redirect_to public_index_path
+        redirect_to posts_path
     end
 
     def vote
