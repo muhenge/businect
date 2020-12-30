@@ -67,3 +67,11 @@ textarea {
 textarea:focus{
     border: 2px solid seagreen;
 }
+
+.luxbar-menu-light {
+    background-color: white !important;
+}
+
+li.luxbar-item:hover {
+    background-color: whitesmoke !important;
+}

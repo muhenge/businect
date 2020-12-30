@@ -1,0 +1,28 @@
+ <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-light">
+        <ul class="luxbar-navigation">
+            <li class="luxbar-header">
+                <a href="#" class="luxbar-brand">LUXBAR</a>
+                <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <% if user_signed_in? %>
+                <li class="luxbar-item">
+                    <%= image_tag(current_user.avatar,:class => "responsive-img", alt: "user image") if current_user.avatar.attached?%>
+                </li>
+                <li class="luxbar-item">
+                    <%= link_to "My posts", users_posts_path(current_user) %>
+                </li>
+                <li class="luxbar-item">
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+                </li>
+                <%else%>
+                <li class="luxbar-item">
+                    <%= link_to  "Login", new_user_session_path %>
+                </li>
+            <%end%>
+        </ul>
+    </div>
+</header>
+ 
