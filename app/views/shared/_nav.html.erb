@@ -11,12 +11,13 @@
                 <li class="luxbar-item">
                     <%= image_tag(current_user.avatar,:class => "responsive-img", alt: "user image") if current_user.avatar.attached?%>
                 </li>
+                 <li class="luxbar-item">
+                    <%= link_to "My profile", user_path(current_user) %>
+                </li>
                 <li class="luxbar-item">
                     <%= link_to "My posts", users_posts_path(current_user) %>
                 </li>
-                <li class="luxbar-item">
-                    <%= link_to "Edit my account", edit_user_registration_path %>
-                </li>
+
                 <li class="luxbar-item">
                     <%= link_to "Logout", destroy_user_session_path, method: :delete%>
                 </li>
