@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     member do
       put "like" => "posts#vote"
     end
-    resources :users
+    resources :users, only: [:show]
     post 'comments', to: 'comments#create'
     
   end

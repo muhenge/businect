@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     def user_posts
         @user = User.find(params[:id])
         @posts = @user.posts
+        @post = Post.find(params[:id])
        #render plain: {posts: @posts.inspect, user: @user.inspect}
     end
 

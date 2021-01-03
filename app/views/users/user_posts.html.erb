@@ -1,6 +1,19 @@
-<%= @user.username.capitalize %><br>
-<% @user.posts.each do |c_post| %>
-  <%= c_post.content.capitalize %>
-  <%= link_to 'Delete', c_post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Edit', edit_post_path(c_post) %>
-<%end%>
+
+
+<div class="center-align flow-text">
+  <%= link_to  "Back to posts", posts_path %>
+</div>
+<div class="container center-align">
+    <h4>Posts from <%= current_user.username.capitalize %></h4>
+
+  <div class="row">
+  <% @user.posts.each do |c_post| %>
+    <div class="post">
+          <%= c_post.content.capitalize %><br>
+            <%= link_to 'View post', post_path(@post), class:"btn blue" %>
+            <%= link_to 'Edit', edit_post_path(c_post), class:"btn" %>
+            <%= link_to 'Delete', c_post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn red" %>
+    </div>
+    <%end%>
+  </div>
+</div>

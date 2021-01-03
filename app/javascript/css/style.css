@@ -75,3 +75,24 @@ textarea:focus{
 li.luxbar-item:hover {
     background-color: whitesmoke !important;
 }
+
+.w-content {
+    margin-top: 25vh;
+}
+
+.comments {
+    padding: 12px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #afadad;
+    margin: 12px;
+}
+
+.comment-paragraph {
+    font-weight: 700;
+}
+
+.posted {
+    padding: 35px;
+}
