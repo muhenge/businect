@@ -1,24 +1,13 @@
-<%= @post.content %>
-<%= link_to @post_user.username.capitalize, post_user_path(@post)%>
-<%= link_to like_post_path(@post), method: :put do %>
-    <span class="medium material-icons">thumb_up</span>
-    <%= @post.get_upvotes.size %>
-<% end %>
 
- <%= image_tag(current_user.avatar,:class => "user-img responsive-img", alt: "user image") if current_user.avatar.attached?%>
-<%= render 'shared/relation' %>
-
-
-<% @comments.each do |comment| %>
-    <%= comment.text %>
-    <%= comment.created_at.strftime("%H:%M-%Z") %>
-    <%= comment.user.username.capitalize %>
-<% end %>
     <div class="row posted">
         <div class="col s12 m12 l8">
         <div class="post">
 
             <p class="flow-text"><%= @post.content %></p>
+            <%= link_to like_post_path(@post), method: :put do %>
+            <span class="medium material-icons">thumb_up</span>
+                <%= @post.get_upvotes.size %>
+            <% end %>
             <div class="comment-title blue-text">
                 <h6>Comments</h6>
             </div>
@@ -32,9 +21,17 @@
         </div>
         </div>
         <div class="col s12 m12 l4 fixing">
+            <div class="user-on-comments">
+
+                 <%= image_tag(current_user.avatar,:class => "user-img responsive-img", alt: "user image") if current_user.avatar.attached?%>
+                 <%= link_to @post_user.username.capitalize, post_user_path(@post)%>
+                <%= render 'shared/relation' %>
+            </div>
+            <div class="input-comment">
             <%= form_with model: [@post, @comment], local: true do |f| %>
-                <%= f.text_area :text %>
-                <%= f.submit "Comment", class:"btn" %>
+                <%= f.text_area :text,rows: 15 %>
+                <%= f.submit "Add a comment", class:"btn" %>
             <% end %>
+            </div>
         </div>
     </div>

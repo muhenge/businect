@@ -101,3 +101,9 @@ li.luxbar-item:hover {
     position: sticky;
     top:5%;
 }
+
+.user-on-comments {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #afadad;
+}
+
