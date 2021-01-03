@@ -3,10 +3,11 @@
  
 <div class="container center-align w-content">
     <div class="row">
-        <div class="col l1 hide-on-med-and-down">
+        <div class="col l1 hide-on-med-and-down fixing">
+            <%= link_to "Post", new_post_path, class:"btn-floating btn-large waves-effect waves-light #009688 teal"%>
         </div>
         <div class="col s12 m12 l8 post-container">
-        <div class="center-align">
+        <div class="center-align hide-on-large-only">
             <%= link_to "Post", new_post_path, class:"btn-floating btn-large waves-effect waves-light #009688 teal"%>
         </div>
             <% @posts.each do |post| %>
