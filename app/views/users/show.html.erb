@@ -1,14 +1,32 @@
-<%= @user.username%>
-<%= @user.bio %>
-<%= @user.interest.field_of_interest %>
-<%= image_tag(@user.avatar,:class => "responsive-img", alt: "user image") if @user.avatar.attached?%>
-<% @user.posts.each do |user_post| %>
-    <%= user_post.content %>
-<%end%>
+<%= render partial: "shared/nav" %>
+<div class="container w-container-user">
+    <div class="row">
+        <div class="col s12 m12 l6">
+            <div class="pic">
+                <%= image_tag(@user.avatar,:class => "responsive-img", alt: "user image") if @user.avatar.attached?%>
+                <%= @user.username.capitalize %>
+                    <% if current_user && current_user.following?(@user) %>
+                        <%= render 'unfollow' %>
+                        <% else %>
+                        <%= render 'follow' %>
+                    <% end %>
+                    <%= render 'shared/relation' %>
 
-    <% if current_user && current_user.following?(@user) %>
-        <%= render 'unfollow' %>
-    <% else %>
-        <%= render 'follow' %>
-    <% end %>
-<%= render 'shared/relation' %>
+            </div>
+        </div>
+        <div class="col s12 m12 l6">
+            <div class="bio">
+                <h5>About</h5>
+                <%= @user.about %>
+            </div>
+            <div class="bio">
+                <h5>Bio</h5>
+                <%= @user.bio %>
+            </div>
+            <div class="interest">
+                <h5>Interests</h5>
+                <%= @user.interest.field_of_interest %>
+            </div>
+        </div>
+    </div>
+</div>
