@@ -25,7 +25,7 @@
             <div class="user-on-comments">
 
                  <%= image_tag(current_user.avatar,:class => "user-img responsive-img", alt: "user image") if current_user.avatar.attached?%>
-                 <%= link_to @post_user.username.capitalize, post_user_path(@post)%>
+                 <%= @post_user.username.capitalize  %>
                 <%= render 'shared/relation' %>
             </div>
             <div class="input-comment">

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     include UsersHelper
     before_action :set_user, only: %i[show user_posts]
+    before_action :authenticate_user!, only: %i[show edit following followers user_posts]
     def index
         @users = User.all
     end
