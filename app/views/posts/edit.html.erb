@@ -1,4 +1,10 @@
-<%= form_for @post do |f| %>
- <%= f.text_area :content, placeholder: "Post here" %>
- <%= f.submit %>
-<% end %>
+<%= render partial: 'shared/nav' %>
+
+<div class="container w-content">
+    <div class="row">
+        <%= form_for @post do |f| %>
+            <%= f.text_area :content, placeholder: "Post here" %>
+            <%= f.submit "Edit a post", class:"btn" %>
+        <% end %>
+    </div>
+</div>
