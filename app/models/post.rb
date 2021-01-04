@@ -7,6 +7,11 @@ class Post < ApplicationRecord
   has_one_attached :image
 
   scope :most_recent, -> { order(created_at: :desc) }
-  scope :tagging, -> { where(:interest_id => :user.interest_id)}
+
+  def self.user_interesting
+    
+  end
+
+  scope :tagging, -> { where(:interest_id => :user_interesting)}
   # Ex:- scope :active, -> {where(:active => true)}
 end
