@@ -5,6 +5,8 @@
          <%= f.text_area :content, placeholder: "Post here" %>
          <%= f.label :image, "Upload an image"%>
          <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif'%>
+         <%= f.label :field_of_interest, "Tag to" %>
+         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Select') %>
          <%= f.submit "Post",class:"btn" %>
       <% end %>
    </div>

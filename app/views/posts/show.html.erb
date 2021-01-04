@@ -1,5 +1,4 @@
 <%= render partial: 'shared/nav' %>
-
     <div class="row posted">
         <div class="col s12 m12 l8">
         <div class="post">
@@ -36,6 +35,8 @@
             </div>
             <div class="back">
               <%= link_to  "Back to posts", posts_path %>
+            <%= @post.interest.field_of_interest %>
+
             </div>
         </div>
     </div>
