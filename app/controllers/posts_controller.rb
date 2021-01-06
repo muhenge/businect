@@ -7,7 +7,9 @@ class PostsController < ApplicationController
     before_action :current_user, only: %i[index upvote new create]
 
     def index
-        @posts = Post.all.most_recent.tagging
+        @posts = Post.all.most_recent
+        @user = current_user.interest_id
+        @post_by_interest = Post.all.find_by(interest_id: @user).content
     end
 
     def show

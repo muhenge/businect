@@ -6,12 +6,13 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
 
+
   scope :most_recent, -> { order(created_at: :desc) }
+  # def user_interesting
+  #   user = Post.find_by(user_id: :id)
+  # end
 
-  def self.user_interesting
-    
-  end
-
-  scope :tagging, -> { where(:interest_id => :user_interesting)}
+  # scope :tagging, -> { where(interest_id: Post.all.find_by(interest_id: @user).content) }
+ 
   # Ex:- scope :active, -> {where(:active => true)}
 end
