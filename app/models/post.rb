@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   acts_as_votable
-  # acts_as_taggable_on :interests
   belongs_to :user
   belongs_to :interest
   has_many :comments, dependent: :destroy
