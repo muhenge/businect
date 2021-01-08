@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
+    resources :posts
   end
 
   root to: "posts#index"

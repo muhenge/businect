@@ -139,7 +139,7 @@ li.luxbar-item:hover {
 .fileUpload {
     position: relative;
     overflow: hidden;
-    max-width: 5vh;
+    max-width: 7vh;
 }
 .fileUpload input.upload {
     position: absolute;

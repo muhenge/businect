@@ -9,10 +9,10 @@
              <%= form_for Post.new, :url => posts_path(), :method => :post do |f| %>
          <%= f.text_area :content, placeholder: "Post here" %>
          <div class="fileUpload">
-            <span class=""><i class="small material-icons">add_a_photo</i></span>
+                    
+            <span class=""> <i class="small material-icons">add_a_photo</i></span>
             <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload"%>
          </div>
-         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Where to Tag? Select') %><br>
          <%= f.submit "Post",class:"btn post-btn" %>
       <% end %>
             <% @posts.each do |post| %>
@@ -24,7 +24,7 @@
 
                     <div class="row post-widgets">
                         <div class="col s6 l6 m6">
-                            Posted by: <%= post.user.username.capitalize%><br>
+                            Posted by: <%= link_to post.user.username.capitalize, post_user_path(post.user, post) %><br>
                             <%= link_to like_post_path(post), method: :put do%>
                                 <span class="medium material-icons">thumb_up</span>
                                 <%= post.get_upvotes.size %>
@@ -39,10 +39,7 @@
             <%end%>
         </div>
         <div class="col s12 m12 l3">
-           would produce a form with fields whose initial state reflect the current values of the attributes of post.
-
-Resource-oriented style
-In the examples just shown, although not indicated explicitly, we still need to use the :url option in order to specify where the form is going to be sent. However, further simplification is possible if the record passed to form_for is a resource, i.e. it corresponds to a set of RESTful routes, e.g. defined using the resources method in config/routes.rb. In this case Rails will simply infer the appropriate URL from the record itself. For example,
+         
 
 
         </div>
