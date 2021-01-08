@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col s12 m12 l9 post-container">
              <%= form_for Post.new, :url => posts_path(), :method => :post do |f| %>
-      
-
          <%= f.text_area :content, placeholder: "Post here" %>
-         <%= f.label :image, "Upload an image"%>
-         <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif'%>
+         <div class="fileUpload">
+            <span class=""><i class="small material-icons">add_a_photo</i></span>
+            <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload"%>
+         </div>
          <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Where to Tag? Select') %><br>
          <%= f.submit "Post",class:"btn post-btn" %>
       <% end %>
