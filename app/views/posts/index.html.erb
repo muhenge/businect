@@ -3,17 +3,19 @@
   
 
 <div class="container center-align w-content">
-  
-        
 
     <div class="row">
-        <div class="col l1 hide-on-med-and-down fixing">
-            <%= link_to "Post", new_post_path, class:"btn-floating btn-large waves-effect waves-light #009688 teal"%>
-        </div>
         <div class="col s12 m12 l8 post-container">
-        <div class="center-align hide-on-large-only">
-            <%= link_to "Post", new_post_path, class:"btn-floating btn-large waves-effect waves-light #009688 teal"%>
-        </div>
+             <%= form_for Post.new, :url => posts_path(), :method => :post do |f| %>
+      
+
+         <%= f.text_area :content, placeholder: "Post here" %>
+         <%= f.label :image, "Upload an image"%>
+         <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif'%>
+         <%= f.label :field_of_interest, "Tag to" %>
+         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Select') %>
+         <%= f.submit "Post",class:"btn" %>
+      <% end %>
             <% @posts.each do |post| %>
                 <div class="post">
                 <%= link_to post_path(post), :action => 'go' do %>

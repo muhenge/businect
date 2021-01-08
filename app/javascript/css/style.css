@@ -76,7 +76,7 @@ li.luxbar-item:hover {
 }
 
 .w-content {
-    margin-top: 25vh;
+    margin-top: 15vh;
 }
 
 .comments {
@@ -115,3 +115,7 @@ li.luxbar-item:hover {
     margin-top : 30vh;
 }
 
+.post-btn {
+    padding: 35px;
+    border: 1px solid #afadad;
+}
