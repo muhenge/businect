@@ -2,7 +2,7 @@
     <div class="row posted">
         <div class="col s12 m12 l8">
         <div class="post">
-
+            
             <p class="flow-text"><%= @post.content %></p>
             <%= link_to like_post_path(@post), method: :put do %>
             <span class="medium material-icons">thumb_up</span>
@@ -24,7 +24,8 @@
             <div class="user-on-comments">
 
                  <%= image_tag(current_user.avatar,:class => "user-img responsive-img", alt: "user image") if current_user.avatar.attached?%>
-                 <%= @post_user.username.capitalize  %>
+                 <%= @post_user.username.capitalize %><br>
+                 <%= @post_user.about.capitalize %>
                 <%= render 'shared/relation' %>
             </div>
             <div class="input-comment">
@@ -35,7 +36,6 @@
             </div>
             <div class="back">
               <%= link_to  "Back to posts", posts_path %>
-            <%= @post.interest.field_of_interest %>
 
             </div>
         </div>

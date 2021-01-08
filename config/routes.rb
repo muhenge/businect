@@ -23,8 +23,7 @@ Rails.application.routes.draw do
     member do
       put "like" => "posts#vote"
     end
-    resources :users, only: [:show]
-    get 'users/:user_id' => 'users#show', :as => :post_user
+    resources :users
     post 'comments', to: 'comments#create'
     # get 'users/:user_id/user_articles' => 'users#user_articles', :as => :user_articles
 

@@ -8,14 +8,25 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.all.most_recent
-        @user = current_user.interest_id
-        @post_by_interest = Post.all.find_by(interest_id: @user).content
+        @user_current = current_user.interest_id
+        # @posts.each do |p|
+        #     if p.interest_id == @user
+        #         @p = p
+        #     end
+        # end
+        # @post_by_interest = Post.all.find_by(interest_id: @user)
+        
+        # @u.each do |uu|
+        #     if uu == @user
+        #     end
+        # end
     end
 
     def show
         @comment = Comment.new
         @post_user = @post.user
         @comments = @post.comments
+        
     end
 
     def new

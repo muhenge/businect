@@ -61,7 +61,6 @@ errors {
 textarea {
     border: 1px solid seagreen;
     border-radius: 3px;
-    padding-left: 12px;
 }
 
 textarea:focus{
