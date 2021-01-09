@@ -13,8 +13,11 @@
                             <%= image_tag(current_user.avatar.variant(resize: "55x55!"),:class => "responsive-img circle", alt: "user image") if current_user.avatar.attached?%>
                         <%end%>
                 </li>
+                <li class="luxbar-item">
+                    <%= link_to "Home", posts_path %>
+                </li>
                  <li class="luxbar-item">
-                    <%= link_to "Edit my profile", user_path(current_user) %>
+                    <%= link_to "Edit my profile", edit_user_registration_path %>
                 </li>
                 <li class="luxbar-item">
                     <%= link_to "My posts", users_posts_path(current_user) %>

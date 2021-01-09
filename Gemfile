@@ -26,6 +26,7 @@ gem 'devise'
 gem 'acts_as_votable', '~> 0.12.1'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'acts-as-taggable-on', '~> 6.5'
+gem "will_paginate", "~> 3.0.4", :require => nil
 # ---------------------added gems end--------------------
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

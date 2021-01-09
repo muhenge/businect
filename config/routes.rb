@@ -44,7 +44,9 @@ Rails.application.routes.draw do
     resources :posts
     resources :users
   end
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy] do
+    resources :users
+  end
   get 'users/:id/user_posts' => 'users#user_posts', :as => :users_posts
   
 end
