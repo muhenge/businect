@@ -199,3 +199,19 @@ span.upload-avatar {
   .field {
       margin-bottom: 12px;
   }
+
+li.img-nav-profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.follow {
+    align-self: center;
+}
