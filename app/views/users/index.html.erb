@@ -1,4 +1,20 @@
-<% @users.each do |user| %>
-    <%= link_to user.username.capitalize, user_path(user) %>
-<% end %>
+
+ <table class="highlight responsive-table centered">
+        <thead>
+          <tr>
+              
+              <th>Username</th>
+              
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            
+            <% @users.each do |user| %>
+               <td><%= link_to user.username.capitalize, user_path(user) %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
 
