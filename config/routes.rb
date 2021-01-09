@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       put "like" => "posts#vote"
     end
     resources :users
+    resources :interests
     post 'comments', to: 'comments#create'
     # get 'users/:user_id/user_articles' => 'users#user_articles', :as => :user_articles
 
@@ -37,9 +38,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :posts
+    resources :interests
   end
   resources :interests do
     resources :posts
+    resources :users
   end
   resources :relationships, only: [:create, :destroy]
   get 'users/:id/user_posts' => 'users#user_posts', :as => :users_posts
