@@ -10,6 +10,8 @@
   </div>
 
   <div class="field">
+  <div class="img-avatar"><%= image_tag resource.avatar if resource.avatar.attached? %></div>
+      
       <%= f.label :avatar, "Upload your profile image" %>
        <div class="fileUpload-avatar">
             <span class="upload-avatar"> <i class="small material-icons">add_a_photo</i></span>
@@ -34,12 +36,12 @@
 
    <div class="field">
     <%= f.label :bio %><br />
-    <%= f.text_area :bio, autofocus: true %>
+    <%= f.text_area :bio, autofocus: true, placeholder: "Add your bio" %>
   </div>
 
   <div class="field">
     <%= f.label :about %><br />
-    <%= f.text_area :about, autofocus: true %>
+    <%= f.text_area :about, autofocus: true, placeholder: "About me" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -48,7 +50,7 @@
 
   <div class="field">
     <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Leave this field blank if you don't want to change your password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New password, leave this field blank if you don't want to change your password" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>

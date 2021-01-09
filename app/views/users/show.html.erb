@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col s12 m12 l6">
             <div class="pic">
-                <%= image_tag(@user.avatar,:class => "responsive-img", alt: "user image") if @user.avatar.attached?%>
+                <%= image_tag(@user.user_avatar,:class => "responsive-img", alt: "user image") if @user.avatar.attached?%>
                 <%= @user.username.capitalize %>
                     <% if current_user && current_user.following?(@user) %>
                         <%= render 'unfollow' %>
