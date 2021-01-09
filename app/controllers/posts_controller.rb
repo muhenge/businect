@@ -41,7 +41,7 @@ class PostsController < ApplicationController
             flash[:notice] = 'Posted'
         else
             flash[:alert] = 'Failed'
-            render :new
+            redirect_to posts_path
         end
     end
 

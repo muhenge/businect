@@ -21,15 +21,19 @@
         </div>
         </div>
         <div class="col s12 m12 l4 fixing">
-            <div class="input-comment">
-            <%= form_with model: [@post, @comment], local: true do |f| %>
-                <%= f.text_area :text,rows: 15 %>
-                <%= f.submit "Add a comment", class:"btn" %>
-            <% end %>
+            <div class="user-on-comments">
+             From: <%= link_to @post_user.username.capitalize , post_user_path(@post, @post.user) %>
+             <%= render 'shared/relation' %>
             </div>
-            <div class="back">
-              <%= link_to  "Back to posts", posts_path %>
-
+            <div class="input-comments">
+                <%= form_with model: [@post, @comment], local: true do |f| %>
+                    <%= f.text_area :text,rows: 15 %>
+                    <%= f.submit "Add a comment", class:"btn" %>
+                <% end %>
+                 <div class="back">
+                    <%= link_to  "Back to posts", posts_path %>
+                </div>
             </div>
         </div>
+           
     </div>

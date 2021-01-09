@@ -1,6 +1,6 @@
 module InterestsHelper
     def interest_params
-        params.require(:interest).permit(:field_of_interest)
+        params.require(:interest).permit(:field_of_interest, :post_id)
     end
 
     private

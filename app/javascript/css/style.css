@@ -85,11 +85,13 @@ textarea:focus{
 }
 
 .luxbar-menu-light {
-    background-color: white !important;
+    background-color: teal !important;
+    color: white !important;
 }
 
 li.luxbar-item:hover {
-    background-color: whitesmoke !important;
+    background-color: white !important;
+    color: teal !important;
 }
 
 .w-content {
@@ -120,7 +122,8 @@ li.luxbar-item:hover {
 
 .user-on-comments {
     margin-bottom: 12px;
-    border-bottom: 1px solid #afadad;
+    border-bottom: #afadad solid 1px;
+    padding-bottom: 12px;
 }
 
 .back {

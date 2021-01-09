@@ -38,7 +38,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :posts
   end
-
+  resources :interests do
+    resources :posts
+  end
   resources :relationships, only: [:create, :destroy]
   get 'users/:id/user_posts' => 'users#user_posts', :as => :users_posts
   
