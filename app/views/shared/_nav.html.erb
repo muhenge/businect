@@ -8,14 +8,13 @@
                 id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
             </li>
             <% if user_signed_in? %>
-                <li class="img-nav-profile luxbar-item">
+                <li class="profile-nav">
                         <%= link_to  user_path(current_user), :action => 'go' do %>
                             <%= image_tag(current_user.avatar.variant(resize: "55x55!"),:class => "responsive-img circle", alt: "user image") if current_user.avatar.attached?%>
-                            <%= current_user.username.capitalize %>
                         <%end%>
                 </li>
                  <li class="luxbar-item">
-                    <%= link_to "My profile", user_path(current_user) %>
+                    <%= link_to "Edit my profile", user_path(current_user) %>
                 </li>
                 <li class="luxbar-item">
                     <%= link_to "My posts", users_posts_path(current_user) %>
