@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
     resources :posts
+    resources :comments
   end
 
   root to: "posts#index"
@@ -30,7 +31,9 @@ Rails.application.routes.draw do
 
   end
 
-  resources :comments
+  resources :comments do
+    resources :users
+  end
 
   resources :users do
     resources :posts
