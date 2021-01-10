@@ -1,5 +1,5 @@
 <%= render partial: "shared/nav" %>
-<div class="container w-container-user">
+<div class="container w-container-user w-content">
     <div class="row">
         <div class="col s12 m12 l4">
             <div class="pic">
@@ -7,7 +7,6 @@
                     <%= image_tag(@user.avatar.variant(resize: "300x300!"),:class => "responsive-img circle", alt: "user image") if @user.avatar.attached?%>
                 </div>
                 <div class="follow">
-                   
                 </div>
             </div>
         </div>
