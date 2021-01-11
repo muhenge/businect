@@ -1,6 +1,12 @@
 <%= render partial: "shared/nav" %>
 
 <div class="container center-align w-content">
+        
+        <% if @posts.empty? %>
+            <div class="not-found">
+                Empty!
+            </div>
+        <%else%>
              <% @posts.each do |post| %>
                 <div class="post">
                 <%= link_to post_path(post), :action => 'go' do %>
@@ -23,5 +29,7 @@
                 </div>
                 
             <%end%>
-          </div>
+        <% end %>
+        
+</div>
 
