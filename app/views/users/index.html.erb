@@ -1,4 +1,4 @@
-
+<div class="container">
  <table class="highlight responsive-table centered">
         <thead>
           <tr>
@@ -9,12 +9,14 @@
         </thead>
 
         <tbody>
-          <tr>
-            
             <% @users.each do |user| %>
-               <td><%= link_to user.username.capitalize, user_path(user) %></td>
-            <% end %>
+          <tr>
+               <td>
+               <%= image_tag(user.avatar.variant(resize: "50x50!"),:class => "responsive-img circle", alt: "user image") if user.avatar.attached?%>
+               <%= link_to user.username.capitalize, user_path(user) %>
+               </td>
           </tr>
+          <% end %>
         </tbody>
-      </table>
+  </table>
 

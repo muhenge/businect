@@ -1,3 +1,21 @@
+
+<div class="container">
+ <table class="highlight responsive-table centered">
+        <thead>
+          <tr>
+              
+              <th>Username</th>
+              
+          </tr>
+        </thead>
+
+        <tbody>
 <% @user.followers.each do |followers| %>
-    <%= link_to followers.username, relationship_user_path(@user.followers, followers) %>
-<%end%>
+          <tr>
+               <td>
+                    <%= link_to followers.username.capitalize, relationship_user_path(@user.followers, followers) %>
+               </td>
+          </tr>
+          <% end %>
+        </tbody>
+  </table>

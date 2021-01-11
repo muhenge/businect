@@ -10,7 +10,7 @@
   </div>
 
   <div class="field">
-      <div class="img-avatar"><%= image_tag (resource.avatar.variant(resize: "70x70!") if resource.avatar.attached?), class:"circle responsive-img" %></div>
+      <div class="img-avatar"><%= image_tag user_avatar(resource, 100), class:"circle responsive-img" %></div>
   
       <%= f.label :avatar, "Upload your profile image" %>
        <div class="fileUpload-avatar">
