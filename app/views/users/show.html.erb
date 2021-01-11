@@ -34,9 +34,9 @@
                         <% else %>
                         <%= render 'follow' %>
                     <% end %>
-                    <%= render 'shared/relation' %>
+                    <%= render 'shared/relation' %><br>
+            <%= link_to "Go to #{@user.username.capitalize} posts", users_posts_path(@user), class:"user-post" %>
         </div>
     </div>
-    <%= link_to "Posts", users_posts_path(@user) %>
 
 </div>

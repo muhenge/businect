@@ -1,8 +1,6 @@
 <%= render partial: "shared/nav" %>
 
 <div class="container center-align w-content">
-    <div class="row">
-          <div class="col s12 m12 l6">
              <% @posts.each do |post| %>
                 <div class="post">
                 <%= link_to post_path(post), :action => 'go' do %>
@@ -26,10 +24,4 @@
                 
             <%end%>
           </div>
-          <div class="col s12 m12 l6">
-               
-    </div>
-  
-          </div>
-    </div>
-</div>
+
