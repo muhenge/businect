@@ -9,8 +9,7 @@ class PostsController < ApplicationController
     def index
         @posts = Post.all.most_recent
         @user_current = current_user.interest_id
-        # @interests = Interest.all
-        # @interest = Interest.find(params[:id])
+        @user_following = current_user.following
     end
 
     def show

@@ -40,8 +40,9 @@
                 
             <%end%>
         </div>
-        <div class="col s12 m12 l3">
+        <div class="col s12 m12 l3 sidebar">
+                <%= link_to 'Following', following_user_path(current_user) %> 
+                <%= link_to  "Followers", followers_user_path(current_user) %>
         </div>
     </div>
 </div>
-

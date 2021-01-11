@@ -215,3 +215,26 @@ li.img-nav-profile {
 .follow {
     align-self: center;
 }
+
+.sidebar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 15%;
+}
+
+.sidebar a {
+    color: teal;
+    padding: 12px;
+    border-radius: 3px;
+    border: 2px solid teal;
+}
+
+.sidebar a:hover {
+    background-color: teal;
+    color: white;
+}
+
+.sidebar a:focus {
+    background-color: teal;
+    color: white;
+}
