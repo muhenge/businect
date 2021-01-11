@@ -1,5 +1,13 @@
+<%= render partial: "shared/nav" %>
 
-<div class="container center-align w-content">
+<% if current_user.followers.empty? %>
+    <div class="container center-align w-content">
+     <div class="row not-found">
+          No follower yet
+     </div>
+    </div>
+<% else %>
+  <div class="container center-align w-content">
   <h4 class="flow-text">Followers</h4>
 
  <table class="highlight responsive-table centered">
@@ -21,3 +29,4 @@
           <% end %>
         </tbody>
   </table>
+<% end %>
