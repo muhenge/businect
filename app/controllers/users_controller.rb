@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     include UsersHelper
     before_action :set_user, only: %i[show user_posts]
-    before_action :authenticate_user!, only: %i[show edit following followers user_posts]
+    before_action :authenticate_user!
     def index
         @users = User.all
     end
@@ -9,10 +9,11 @@ class UsersController < ApplicationController
     def show; end
 
     def user_posts
-        @user = User.find(params[:id])
         @posts = @user.posts
-        @post = Post.find(params[:id])
-       #render plain: {posts: @posts.inspect, user: @user.inspect}
+    end
+
+    def current_user_posts
+        @current_posts = current_user.posts
     end
 
     def edit

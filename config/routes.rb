@@ -48,5 +48,5 @@ Rails.application.routes.draw do
     resources :users
   end
   get 'users/:id/user_posts' => 'users#user_posts', :as => :users_posts
-  
+  get 'users/:id/current_user_posts' => 'users#current_user_posts', :as => :current_user_posts
 end
