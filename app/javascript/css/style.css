@@ -246,6 +246,28 @@ li.img-nav-profile {
     border: 2px solid teal;
 }
 
+.side-top {
+    position:relative;
+    margin-top :7vh;
+}
+
+.side-top a {
+    color: teal;
+    padding: 12px;
+    border-radius: 3px;
+    border: 2px solid teal;
+}
+
+.side-top a:hover {
+    background-color: teal;
+    color: white;
+}
+
+.side-top a:focus {
+    background-color: teal;
+    color: white;
+}
+
 .user-post:hover {
     background-color: teal;
     color: white;

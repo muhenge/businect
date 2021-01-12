@@ -1,7 +1,12 @@
 <%= render partial: "shared/nav" %>
 
 <div class="container center-align w-content">
-     <h4>Manage your posts</h4>
+        <% if current_user.posts.empty? %>
+          <div class="not-found">
+                No posts
+          </div>
+        <% else %>
+          <h4>Manage your posts</h4>
         <% current_user.posts.each do |c_post| %>
         <div class="post">
         <%= c_post.content.capitalize %><br>
@@ -9,4 +14,6 @@
         <%= link_to 'Edit', edit_post_path(c_post), class:"btn" %>
         <%= link_to 'Delete', c_post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn red" %>
         <%end%>
+        <% end %>
+     
 </div>
