@@ -282,3 +282,7 @@ li.img-nav-profile {
     font-size: 6rem;
     color: gray;
 }
+
+footer {
+    background-color: teal !important;
+}
