@@ -1,32 +1,31 @@
-<div class="container">
+<div class="container center-align">
   <div class="row">
+    <h4>Create an account</h4>
     <div class="center-block sign-up">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <div class="center-align materialize-red-text errors">
         <%= render "devise/shared/error_messages", resource: resource%> 
       </div>
         <div class="field">
-          <%= f.label :username %><br />
-          <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+          <%= f.text_field :username, autofocus: true, autocomplete: "username",placeholder:"Username" %>
         </div>
 
         <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
+          <%= f.label :field_of_interest, "Select your interest" %><br />
+          <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Select') %>
+      </div>
+
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password, 6 characters mininum" %>
         </div>
 
-         <div class="field">
-    <%= f.label :field_of_interest, "Select your interest" %><br />
-    <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Select') %>
-  </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Verify password" %>
+        </div>
 
         <div class="actions">
           <%= f.submit "Sign up", class:"btn" %> or <%= render "devise/shared/links" %>
