@@ -20,11 +20,13 @@
   </div>
 
   <div class="field">
-    <%= f.text_field :username, autofocus: true, placeholder:"Create a username" %>
+    <%= f.label :usename %><br />
+    <%= f.text_field :username, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: placeholder:"Enter email" %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
