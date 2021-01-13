@@ -2,6 +2,7 @@
 
 <div class="container center-align w-content">
         <% if current_user.posts.empty? %>
+          <%= link_to  "Add a new one", new_post_path, class:"btn teal" %>
           <div class="not-found">
                 No posts
           </div>

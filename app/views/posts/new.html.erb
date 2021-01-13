@@ -1,13 +1,17 @@
-<div class="container">
+<%= render partial:'shared/nav' %>
+<div class="container w-content">
    <div class="row">
       <%= link_to  "Back to posts", posts_path %><br>
       <%= form_for @post do |f| %>
-         <%= f.text_area :content, placeholder: "Post here" %>
-         <%= f.label :image, "Upload an image"%>
-         <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif'%>
+        <%= f.text_area :content, placeholder: "Post here" %>
+         <div class="fileUpload">
+                    
+            <span class=""> <i class="small material-icons">add_a_photo</i></span>
+            <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload tooltip", title:"Add a picture for your post"%>
+         </div>
          <%= f.label :field_of_interest, "Tag to" %>
-         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Select') %>
-         <%= f.submit "Post",class:"btn" %>
+         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Tag to') %><br>
+         <%= f.submit "Post",class:"btn post-btn" %>
       <% end %>
    </div>
 </div>
