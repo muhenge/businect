@@ -10,7 +10,7 @@
             <% if user_signed_in? %>
                 <li class="profile-nav">
                         <%= link_to  user_path(current_user), :action => 'go' do %>
-                            <%= image_tag user_avatar(current_user, 55), class:"circle responsive-img", :title => current_user.username.capitalize,alt: "user image" %>
+                            <%= image_tag user_avatar(current_user, 55), class:"circle responsive-img", :title => "Visit #{current_user.username.capitalize} profile",alt: "user image" %>
                         <%end%>
 
                 </li>
