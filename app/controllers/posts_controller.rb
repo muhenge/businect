@@ -10,6 +10,8 @@ class PostsController < ApplicationController
         @posts = Post.all.most_recent
         @user_interest = current_user.interest
         @user_following = current_user.following
+        @interests = Interest.all
+       
     end
 
     def show

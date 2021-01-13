@@ -7,6 +7,10 @@ class InterestsController < ApplicationController
         @interests = Interest.all
     end
 
+    def post_by_interest
+        @posts = current_user.interest.posts
+    end
+
     def show
         @interest_post = @interest.posts
     end

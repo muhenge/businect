@@ -29,23 +29,27 @@
 
                     <div class="row post-widgets">
                         <div class="col s6 l6 m6">
-                            Posted by: <%= link_to post.user.username.capitalize, post_user_path(post, post.user) %><br>
+                            Posted by: <strong><%= link_to post.user.username.capitalize, post_user_path(post, post.user)%></strong><br>
                             <%= link_to like_post_path(post), method: :put do%>
                                 <span class="medium material-icons">thumb_up</span>
-                                <%= post.get_upvotes.size %>
+                                <%= post.get_upvotes.size %><br>
                         <% end %>
                         </div>
                         <div class="col s6 l6 m6 box-b">
                         <%= post.created_at %>
                         </div>
                     </div>
-                </div>
+                    <div>
+                    </div>Tag to: <%= post.interest.field_of_interest %></div>
                 
             <%end%>
         </div>
         <div class="col s12 m12 l3 sidebar hide-on-med-and-down">
                 <%= render 'shared/relation' %>
         </div>
+            <%= link_to @user_interest.field_of_interest, posts_by_interest_path(@user_interest)  %>
+
     </div>
+
 </div>
       <%= render partial: "shared/footer" %>

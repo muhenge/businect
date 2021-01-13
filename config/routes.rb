@@ -50,4 +50,5 @@ Rails.application.routes.draw do
   end
   get 'users/:id/user_posts' => 'users#user_posts', :as => :users_posts
   get 'users/:id/current_user_posts' => 'users#current_user_posts', :as => :current_user_posts
+  get 'interests/:id/post_by_interest' => 'interests#post_by_interest', :as => :posts_by_interest
 end
