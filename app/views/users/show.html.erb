@@ -4,7 +4,8 @@
         <div class="col s12 m12 l4">
             <div class="pic">
                 <div class="img">
-                    <%= image_tag(@user.avatar.variant(resize: "300x300!"),:class => "responsive-img circle", alt: "user image") if @user.avatar.attached?%>
+                    <%= image_tag user_avatar(@user, 300), class:"circle responsive-img", :title => @user.username.capitalize,alt: "user image" %>
+                    
                 </div>
                 <div class="follow">
                 </div>

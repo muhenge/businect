@@ -8,4 +8,6 @@ module PostsHelper
     def set_post
         @post = Post.find(params[:id])
     end
+
+    
 end

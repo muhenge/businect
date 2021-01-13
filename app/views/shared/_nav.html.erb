@@ -10,8 +10,9 @@
             <% if user_signed_in? %>
                 <li class="profile-nav">
                         <%= link_to  user_path(current_user), :action => 'go' do %>
-                            <%= image_tag(current_user.avatar.variant(resize: "55x55!"),:class => "responsive-img circle tooltip",:title => current_user.username.capitalize, alt: "user image") if current_user.avatar.attached?%>
+                            <%= image_tag user_avatar(current_user, 55), class:"circle responsive-img", :title => current_user.username.capitalize,alt: "user image" %>
                         <%end%>
+
                 </li>
                 <li class="luxbar-item">
                     <%= link_to "Home", posts_path %>
