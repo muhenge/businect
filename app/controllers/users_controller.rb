@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     before_action :set_user, only: %i[show user_posts]
     before_action :authenticate_user!
     def index
-        @users = User.search[params[:search]]
+        # @users = User.search[params[:search]]
+        @users = User.all
     end
 
     def show; end
@@ -20,7 +21,6 @@ class UsersController < ApplicationController
         @user_name = User.find(1)
     end
     
-
     def following
         @title = "Following"
         @user = User.find(params[:id])
