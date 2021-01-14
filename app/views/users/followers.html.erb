@@ -1,6 +1,6 @@
 <%= render partial: "shared/nav" %>
 
-<% if current_user.followers.empty? %>
+<% if @user.followers.empty? %>
     <div class="container center-align w-content">
      <div class="row not-found">
           No follower yet
