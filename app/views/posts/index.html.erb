@@ -24,7 +24,7 @@
                 <div class="post">
                 <%= link_to post_path(post), :action => 'go' do %>
                 <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%><br>
-                    <p><%= simple_format(post.content).truncate(200) %></p><br>
+                    <p><%= simple_format(post.content.truncate(200)) %></p><br>
                 <%end%>
 
                     <div class="row post-widgets">
