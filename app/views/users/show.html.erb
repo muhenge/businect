@@ -1,0 +1,44 @@
+<%= render partial: "shared/nav" %>
+<div class="container w-container-user w-content">
+    <div class="row">
+        <div class="col s12 m12 l4">
+            <div class="pic">
+                <div class="img">
+                    <%= image_tag user_avatar(@user, 300), class:"circle responsive-img", :title => @user.username.capitalize,alt: "user image" %>
+                    
+                </div>
+                <div class="follow">
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m12 l4">
+             <div class="username">
+                <h5>Username</h5>
+                <%= @user.username.capitalize %>
+            </div>
+            <div class="bio">
+                <h5>About</h5>
+                <%= @user.about.capitalize %>
+            </div>
+            <div class="bio">
+                <h5>Bio</h5>
+                <%= @user.bio.capitalize %>
+            </div>
+            <div class="interest">
+                <h5>Interests</h5>
+                <%= @user.interest.field_of_interest %>
+            </div>
+        </div>
+        <div class="col s12 m12 l4 follow">
+             <% if current_user && current_user.following?(@user) %>
+                        <%= render 'unfollow' %>
+                        <% else %>
+                        <%= render 'follow' %>
+                    <% end %>
+                    <%= render 'shared/relation' %><br>
+            <%= link_to "Go to #{@user.username.capitalize} posts", users_posts_path(@user), class:"user-post" %>
+        </div>
+    </div>
+
+</div>
+

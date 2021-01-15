@@ -1,0 +1,296 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 0 !important;
+    background-color: white !important;
+    color: black !important;
+
+}
+
+select {
+    display: block !important;
+}
+
+.post-btn {
+    background-color: transparent;
+    color: teal !important;
+    min-width: 100%;
+}
+
+.post-btn:hover {
+    background-color: teal !important;
+    color: white !important;
+}
+
+.post-btn:focus {
+    background-color: teal !important;
+    color: white !important;
+}
+
+
+.start {
+    position: sticky !important;
+    top: 5% !important;
+}
+
+.sign-up {
+    margin-top: 20vh;
+    padding:0 75px 0 75px;
+}
+
+errors {
+    font-size: .75rem !important;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.post {
+    padding: 12px;
+    border: 1px solid rgba(187,187,187,0.8);
+    margin-top: 12px;
+    border-radius: 9px;
+}
+
+.post-widgets {
+    color: green;
+    margin-top:35px;
+    font-weight:small;
+}
+
+.transit {
+    margin-top: 50vh;
+}
+
+.edit-signup {
+    padding: 0 150px 0 150px;
+}
+
+textarea {
+    border: 1px solid seagreen;
+    border-radius: 3px;
+}
+
+textarea:focus{
+    border: 2px solid seagreen;
+}
+
+.luxbar-menu-light {
+    background-color: teal !important;
+    color: white !important;
+}
+
+li.luxbar-item:hover {
+    background-color: white !important;
+    color: teal !important;
+}
+
+.w-content {
+    margin-top: 15vh;
+}
+
+.comments {
+    padding: 12px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #afadad;
+    margin: 12px;
+}
+
+.comment-paragraph {
+    font-weight: 700;
+}
+
+.posted {
+    padding: 35px;
+}
+
+.fixing {
+    position: sticky;
+    top:10%;
+}
+
+.user-on-comments {
+    margin-bottom: 12px;
+    border-bottom: #afadad solid 1px;
+    padding-bottom: 12px;
+}
+
+.back {
+    margin-top :55px;
+    color: black;
+}
+
+.w-container-user {
+    margin-top : 30vh;
+}
+
+.row {
+    justify-content: space-between !important;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    max-width: 7vh;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.fileUpload-avatar {
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.fileUpload-avatar input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100vh;
+}
+
+span.upload-avatar {
+    cursor: pointer;
+    width: fit-content;
+}
+
+::-webkit-input-placeholder { 
+    color: black !important;
+  }
+  
+  :-ms-input-placeholder { 
+    color: black !important;
+  }
+
+  :-moz-input-placeholder { 
+    color: black !important;
+  }
+  
+  ::placeholder {
+    color: black !important;
+  }
+
+  .field {
+      margin-bottom: 12px;
+  }
+
+li.img-nav-profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.follow {
+    align-self: center;
+}
+
+.sidebar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 15%;
+}
+
+.sidebar a {
+    color: teal;
+    padding: 12px;
+    border-radius: 3px;
+    border: 2px solid teal;
+}
+
+.sidebar a:hover {
+    background-color: teal;
+    color: white;
+}
+
+.sidebar a:focus {
+    background-color: teal;
+    color: white;
+}
+
+.user-post {
+    color: teal;
+    padding: 12px;
+    border-radius: 3px;
+    border: 2px solid teal;
+}
+
+.side-top {
+    position:relative;
+    margin-top :7vh;
+}
+
+.side-top a {
+    color: teal;
+    padding: 12px;
+    border-radius: 3px;
+    border: 2px solid teal;
+}
+
+.side-top a:hover {
+    background-color: teal;
+    color: white;
+}
+
+.side-top a:focus {
+    background-color: teal;
+    color: white;
+}
+
+.user-post:hover {
+    background-color: teal;
+    color: white;
+}
+
+.user-post:focus {
+    background-color: teal;
+    color: white;
+}
+
+.not-found {
+    font-size: 6rem;
+    color: gray;
+}
+
+footer {
+    background-color: teal !important;
+    position :absolute !important;
+    bottom: 0;
+    width: 100%;
+}
+
+p {
+    color:black;
+}
+

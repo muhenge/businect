@@ -1,0 +1,32 @@
+<%= render partial: "shared/nav" %>
+
+<% if @user.followers.empty? %>
+    <div class="container center-align w-content">
+     <div class="row not-found">
+          No follower yet
+     </div>
+    </div>
+<% else %>
+  <div class="container center-align w-content">
+  <h4 class="flow-text">Followers</h4>
+
+ <table class="highlight responsive-table centered">
+        <thead>
+          <tr>
+              
+              <th>Username</th>
+              
+          </tr>
+        </thead>
+
+        <tbody>
+<% @user.followers.each do |followers| %>
+          <tr>
+               <td>
+                    <%= link_to followers.username.capitalize, relationship_user_path(@user.followers, followers) %>
+               </td>
+          </tr>
+          <% end %>
+        </tbody>
+  </table>
+<% end %>

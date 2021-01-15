@@ -1,0 +1,39 @@
+<%= render partial: 'shared/nav' %>
+    <div class="row posted">
+        <div class="col s12 m12 l8">
+        <div class="post">
+            
+            <p class="flow-text"><%= simple_format(@post.content) %></p>
+            <%= link_to like_post_path(@post), method: :put do %>
+            <span class="medium material-icons">thumb_up</span>
+                <%= @post.get_upvotes.size %>
+            <% end %>
+            <div class="comment-title blue-text">
+                <h6>Comments</h6>
+            </div>
+                <% @comments.each do |comment| %>
+                    <div class="comments">
+                        <p class="comment-paragraph"><%= comment.text %><br></p>
+                        <strong>At</strong>: <%= comment.created_at.strftime("%H:%M-%Z") %><br>
+                        <strong>By</strong>: <%= link_to comment.user.username.capitalize, comment_user_path(comment, comment.user) %>
+                    </div>
+                    <% end %>
+        </div>
+        </div>
+        <div class="col s12 m12 l4 fixing">
+            <div class="user-on-comments">
+             From: <%= link_to @post_user.username.capitalize , post_user_path(@post, @post.user) %>
+             <%= render 'shared/relation' %>
+            </div>
+            <div class="input-comments">
+                <%= form_with model: [@post, @comment], local: true do |f| %>
+                    <%= f.text_area :text,rows: 15 %>
+                    <%= f.submit "Add a comment", class:"btn" %>
+                <% end %>
+                 <div class="back">
+                    <%= link_to  "Back to posts", posts_path %>
+                </div>
+            </div>
+        </div>
+           
+    </div>

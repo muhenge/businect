@@ -1,0 +1,41 @@
+<%= render partial: "shared/nav" %>
+
+<div class="container center-align w-content">
+
+        
+        <div class="col s12 m12 l3">
+        <% if @posts.empty? %>
+            <div class="not-found">
+                Empty!
+            </div>
+        <%else%>
+             <% @posts.each do |post| %>
+                <div class="post">
+                <%= link_to post_path(post), :action => 'go' do %>
+                <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%><br>
+                    <p><%= post.content %></p><br>
+                <%end%>
+
+                    <div class="row post-widgets">
+                        <div class="col s6 l6 m6">
+                            Posted by: <%= link_to post.user.username.capitalize, post_user_path(post, post.user) %><br>
+                            <%= link_to like_post_path(post), method: :put do%>
+                                <span class="medium material-icons">thumb_up</span>
+                                <%= post.get_upvotes.size %>
+                        <% end %>
+                        </div>
+                        <div class="col s6 l6 m6">
+                            <%= post.created_at %>
+                        </div>
+                        
+                    </div>
+                        <div class="left-align">
+                            Tag: <strong><%= post.interest.field_of_interest %></strong>
+                        </div>
+                </div>
+                
+            <%end%>
+        <% end %>
+        </div>
+</div><br>
+

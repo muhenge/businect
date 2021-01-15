@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Businect</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  
+      <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+      <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.2.1/dist/jBox.all.min.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+
+  <div class="container">
+    <div class="row">
+      <div class="center-align">
+        <p class="notice "><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+  </div>
+  </div>
+    <%= yield %>
+  </body>
+</html>

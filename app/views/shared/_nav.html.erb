@@ -1,0 +1,38 @@
+ <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-light">
+        <ul class="luxbar-navigation">
+            <li class="luxbar-header">
+                <%= link_to  "ISHEMA", posts_path, class:"luxbar-brand" %>
+                <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <% if user_signed_in? %>
+                <li class="profile-nav">
+                        <%= link_to  user_path(current_user), :action => 'go' do %>
+                            <%= image_tag user_avatar(current_user, 55), class:"circle responsive-img", :title => "Visit #{current_user.username.capitalize} profile",alt: "user image" %>
+                        <%end%>
+
+                </li>
+                <li class="luxbar-item">
+                    <%= link_to "Home", posts_path %>
+                </li>
+                 <li class="luxbar-item">
+                    <%= link_to "Edit my profile", edit_user_registration_path %>
+                </li>
+                <li class="luxbar-item">
+                    <%= link_to "Manage my posts", current_user_posts_path(current_user) %>
+                </li>
+
+                <li class="luxbar-item">
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+                </li>
+                <%else%>
+                <li class="luxbar-item">
+                    <%= link_to  "Login", new_user_session_path %>
+                </li>
+            <%end%>
+        </ul>
+    </div>
+</header>
+ 
