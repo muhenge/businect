@@ -8,7 +8,7 @@
         </div>
  
     <div class="row w-content">
-        <div class="col s12 m12 l9 post-container box-a">
+        <div class="col s12 m12 l8 post-container box-a">
              <%= form_for Post.new, :url => posts_path(), :method => :post do |f| %>
          <%= f.text_area :content, placeholder: "Post here" %>
          <div class="fileUpload">
@@ -44,7 +44,7 @@
                 
             <%end%>
         </div>
-        <div class="col s12 m12 l3 sidebar hide-on-med-and-down">
+        <div class="col s12 m12 l4 sidebar hide-on-med-and-down">
             <%= render 'shared/relation' %><br><br>
             <%= link_to "Posts based on #{@user_interest.field_of_interest}", posts_by_interest_path(@user_interest) %>
         </div>
