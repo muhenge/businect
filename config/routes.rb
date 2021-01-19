@@ -29,7 +29,6 @@ Rails.application.routes.draw do
     resources :users
     resources :interests
     post 'comments', to: 'comments#create'
-    # get 'users/:user_id/user_articles' => 'users#user_articles', :as => :user_articles
 
   end
 
