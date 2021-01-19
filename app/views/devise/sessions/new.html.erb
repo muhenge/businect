@@ -1,11 +1,8 @@
 <div class="row">
   <div class="col s12 m12 l8">
-   <div class="hide-on-large-only">
-    <%= link_to  "Sign in", new_user_session_path %>
-   </div>
-  
+    Welcome
   </div>
-  <div class="col s12 m12 l4 start hide-on-med-and-down">
+  <div class="col s12 m12 l4 start">
     <div class="login">
       <h3 class="flow-text">Sign in</div><br>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -28,9 +25,10 @@
 
   <div class="actions">
     <%= f.submit "Log in", class:"btn" %>
+    <%= render "devise/shared/links" %>
   </div>
+
 <% end %>
-  <%= render "devise/shared/links" %>
     </div>
   </div>
 
