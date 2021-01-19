@@ -4,22 +4,13 @@
 
 <div class="container">
         <div class="hide-on-large-only side-top">
-                <%= render 'shared/relation' %>
+                <%= render 'shared/relation' %><br><br>
+                <%= link_to  "New Post", new_post_path %>
         </div>
  
     <div class="row w-content">
         <div class="col s12 m12 l8 post-container box-a">
-             <%= form_for Post.new, :url => posts_path(), :method => :post do |f| %>
-         <%= f.text_area :content, placeholder: "Post here" %>
-         <div class="fileUpload">
-                    
-            <span class=""> <i class="small material-icons">add_a_photo</i></span>
-            <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload tooltip", title:"Add a picture for your post"%>
-         </div>
-         <%= f.label :field_of_interest, "Tag to" %>
-         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Tag to') %><br>
-         <%= f.submit "Post",class:"btn post-btn" %>
-      <% end %>
+
             <% @posts.each do |post| %>
                 <div class="post">
                 <%= link_to post_path(post), :action => 'go' do %>
@@ -45,6 +36,17 @@
             <%end%>
         </div>
         <div class="col s12 m12 l4 sidebar hide-on-med-and-down">
+        <%= form_for Post.new, :url => posts_path(), :method => :post do |f| %>
+         <%= f.text_area :content, placeholder: "Post here" %>
+         <div class="fileUpload">
+                    
+        <span class=""> <i class="small material-icons">add_a_photo</i></span>
+            <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload tooltip", title:"Add a picture for your post"%>
+         </div>
+         <%= f.label :field_of_interest, "Tag to" %>
+         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Tag to') %><br>
+         <%= f.submit "Post",class:"btn post-btn" %>
+        <% end %><br><br>
             <%= render 'shared/relation' %><br><br>
             <%= link_to "Posts based on #{@user_interest.field_of_interest}", posts_by_interest_path(@user_interest) %>
         </div>
