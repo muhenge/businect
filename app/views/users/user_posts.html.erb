@@ -1,16 +1,17 @@
 <%= render partial: "shared/nav" %>
 
-<div class="container center-align w-content">
+<div class="container w-content user-posts">
         <% if @posts.empty? %>
-            <div class="not-found">
+            <div class="not-found center-align">
                 Empty!
             </div>
         <%else%>
+        <div class="row">
              <% @posts.each do |post| %>
                 <div class="post">
                 <%= link_to post_path(post), :action => 'go' do %>
                 <%= image_tag(post.image, :class => "user-img responsive-img", alt: "user image") if post.image.attached?%><br>
-                    <p><%= post.content %>/p><br>
+                    <p><%= simple_format(post.content.truncate(200)) %></p><br>
                 <%end%>
 
                     <div class="row post-widgets">
@@ -24,11 +25,13 @@
                         <div class="col s6 l6 m6">
                         <%= post.created_at %>
                         </div>
+                        </div>Tag to: <%= post.interest.field_of_interest %></div>
                     </div>
                 </div>
-                                    </div>Tag to: <%= post.interest.field_of_interest %></div>
-
+                 </div>
             <%end%>
+          
         <% end %>
+
 </div>
 

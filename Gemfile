@@ -27,7 +27,8 @@ gem 'acts_as_votable', '~> 0.12.1'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'acts-as-taggable-on', '~> 6.5'
 gem "will_paginate", "~> 3.0.4", :require => nil
-# gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1', require: false
+gem 'materialize-sass', '~> 1.0'
 # ---------------------added gems end--------------------
 # Use Active Storage variant
 gem 'image_processing', '~> 1.12', '>= 1.12.1'

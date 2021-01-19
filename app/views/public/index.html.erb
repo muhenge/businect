@@ -1,30 +1,9 @@
-<%= link_to  "Connect", new_user_session_path %>
-<%= link_to  "Company connect", new_company_session_path %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete%>
-
-<%= current_user.username.capitalize %><br>
-<%=  link_to "Edit profile", edit_user_registration_path(@current_user)%>
-
-<%= link_to 'Add a post', new_post_path %>
-<div class="container center-align">
-    <div class="row">
-        <div class="col l1 hide-on-med-and-down">
+<%= render partial: "shared/nav" %>
+    <div class="container bg-blue">
+    <div class="row start-img">
+        <div class="col s12 l12 m10">
+            <%= image_tag "gif" %>
         </div>
-        <div class="col s12 m12 l8 post-container">
-            <% @posts.each do |post| %>
-                <div class="post">
-                    <%= post.content %><br>
-                    <div class="row post-widgets">
-                        <div class="col s6 l6 m6">
-                            <%= post.user.username.capitalize %>
-                        </div>
-                        <div class="col s6 l6 m6">
-                        <%= post.created_at %>
-                        </div>
-                    </div>
-                </div>
-            <%end%>
-        </div>
-        <div class="col hide-on-med-and-down l1"></div>
     </div>
-</div>
+    </div>
+<%= render partial: "shared/footer" %>

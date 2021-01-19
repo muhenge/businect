@@ -1,25 +1,24 @@
 <%= render partial: 'shared/nav' %>
 
-<div class="container w-content">
-  <div class="row edit-signup">
-  <h2>Update your profile</h2><br>
+<div class="container w-content center-align">
+<h2>Update your profile</h2><br>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
-      
-  </div>
-
-  <div class="field">
-      <div class="img-avatar"><%= image_tag user_avatar(resource, 100), class:"circle responsive-img" %></div>
+  <div class="row">
   
-      <%= f.label :avatar, "Upload your profile image" %>
+  <div class="col s12 m12 l6">
+        <div class="field">
+      <div class="img-avatar"><%= image_tag user_avatar(resource, 300), class:"circle responsive-img" %></div><br>
+  
+      <%= f.label :avatar, "Upload your profile picture" %>
        <div class="fileUpload-avatar">
-            <span class="upload-avatar"> <i class="small material-icons">add_a_photo</i></span>
-            <%= f.file_field :avatar ,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload"%>
+            <span class="upload-avatar tooltip" title="Add a picture for your post"> <i class="large material-icons">add_a_photo</i></span>
+            <%= f.file_field :avatar ,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload tooltip", title:"Update your profile picture"%>
         </div>
   </div>
-
-  <div class="field">
+  </div>
+  <div class="col s12 m12 l6">
+      <div class="field">
     <%= f.label :usename %><br />
     <%= f.text_field :username, autofocus: true %>
   </div>
@@ -49,8 +48,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New password, leave this field blank if you don't want to change your password" %>
+    <%= f.label :password,"New passowrd" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "leave this field blank, if you don't want to change it" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -79,3 +78,4 @@
 <%= link_to "Back", :back,class:"btn" %>
 </div>
 </div>
+  </div>
