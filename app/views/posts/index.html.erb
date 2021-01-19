@@ -40,7 +40,7 @@
          <%= f.text_area :content, placeholder: "Post here" %>
          <div class="fileUpload">
                     
-        <span class=""> <i class="small material-icons">add_a_photo</i></span>
+        <span class="tooltip" title="Add a picture for your post"> <i class="small material-icons">add_a_photo</i></span>
             <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload tooltip", title:"Add a picture for your post"%>
          </div>
          <%= f.label :field_of_interest, "Tag to" %>
