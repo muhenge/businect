@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :interests
   end
 
-  root to: "posts#index"
+  root to: "public#index"
 
   resources :posts do
     member do
