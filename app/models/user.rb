@@ -28,11 +28,11 @@ class User < ApplicationRecord
     following.include?(user)
   end
 
-  # def self.search
-  #   if search
-  #     where(["name LIKE ?","%#{params[:search]}%"])
-  #   else
-  #     all
-  #   end
-  # end
+  def self.search(search)
+    if search
+      where(["username LIKE ?","%#{search}%"])
+    else
+      all
+    end
+  end
 end
