@@ -1,6 +1,6 @@
 <%= render partial: 'shared/nav' %>
 
-<div class="container w-content">
+<div class="container w-content center-align">
 <h2>Update your profile</h2><br>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -12,7 +12,7 @@
   
       <%= f.label :avatar, "Upload your profile picture" %>
        <div class="fileUpload-avatar">
-            <span class="upload-avatar"> <i class="small material-icons">add_a_photo</i></span>
+            <span class="upload-avatar"> <i class="large material-icons">add_a_photo</i></span>
             <%= f.file_field :avatar ,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload"%>
         </div>
   </div>
@@ -48,8 +48,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New password, leave this field blank if you don't want to change your password" %>
+    <%= f.label :password,"New passowrd" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "leave this field blank, if you don't want to change it" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
