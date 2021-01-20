@@ -118,6 +118,10 @@ li.luxbar-item:hover {
     padding: 35px;
 }
 
+.log-left {
+
+}
+
 .fixing {
     position: sticky;
     top:10%;
@@ -127,6 +131,12 @@ li.luxbar-item:hover {
     margin-bottom: 12px;
     border-bottom: #afadad solid 1px;
     padding-bottom: 12px;
+}
+
+img.start-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .back {
