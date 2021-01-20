@@ -1,8 +1,11 @@
-
-<div class="container center-align">
-<div class="row">
-  
-    <div class="login">
+<%= render partial:'shared/nav' %>
+<div class="container w-content center-align">
+  <div class="row">
+     <div class="col s12 m12 l8 center-align">
+        <%= image_tag 'welcome.png', class:"start-img" %>
+     </div>
+     <div class="col s12 m12 l4">
+        <div class="login">
       <h3 class="flow-text">Sign in</div><br>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -28,9 +31,12 @@
   </div>
 
 <% end %>
+</div>
     </div>
   </div>
-</div>
+<%= render partial: "shared/footer" %>
+
+
 
 
 
