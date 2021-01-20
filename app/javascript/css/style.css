@@ -169,6 +169,12 @@ img.start-img {
     filter: alpha(opacity=0);
 }
 
+.gif {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
 .fileUpload-avatar {
     position: relative;
     overflow: hidden;
