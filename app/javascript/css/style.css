@@ -10,7 +10,18 @@ nav {
     z-index: 0 !important;
     background-color: white !important;
     color: black !important;
+}
 
+p.notice {
+    color: rgb(8, 151, 144);
+    margin-top: 20vh;
+    font-size:larger;
+}
+
+p.alert {
+    color: rgb(224, 14, 14);
+    margin-top: 20vh;
+    font-size:larger;
 }
 
 select {
@@ -35,6 +46,11 @@ select {
 .post-btn:focus {
     background-color: teal !important;
     color: white !important;
+}
+
+.stick {
+    position: sticky;
+    top :5%;
 }
 
 
