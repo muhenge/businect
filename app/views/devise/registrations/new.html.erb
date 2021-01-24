@@ -16,8 +16,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :field_of_interest, "Select your interest" %><br />
-          <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Select') %>
+          <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Select your favorite interest') %>
       </div>
 
         <div class="field">

@@ -45,10 +45,12 @@
             <%= f.file_field :image,direct_upload: true, accept:'application/jpeg,application/jpg,application/png,application/gif',class:"upload tooltip", title:"Add a picture for your post"%>
          </div>
          <%= f.label :field_of_interest, "Tag to" %>
-         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Tag to') %><br>
+         <%= f.collection_select(:interest_id, Interest.all, :id, :field_of_interest, :prompt => 'Tag to interest') %><br>
          <%= f.submit "Post",class:"btn post-btn" %>
         <% end %><br><br>
             <%= render 'shared/relation' %><br><br>
+
+       
             <%= link_to "Posts based on #{@user_interest.field_of_interest}", posts_by_interest_path(@user_interest) %>
         </div>
     </div>

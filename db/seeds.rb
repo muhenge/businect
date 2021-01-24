@@ -9,7 +9,10 @@
 # sc = Interest.create(field_of_interest:'Sciences')
 # ent = Interest.create(field_of_interest:'Enterteinment')
 
-['Software development','Education','Science','Enterteinement'].each do |interests|
+posts_interests = [
+    'Sciences','Medicine','Business & Finance','Arts & Humanity','Music','Philosophy','Theology & Religious Sciences','Social Sciences','Nursing','Science and Engineering',
+    'Educational Sciences','Agriculture and Food Sciences','Sciences of Administration','Geography and Geomatics','Computer Sciences','Veterinary Medicine']
+
+posts_interests.sort.each do |interests|
     Interest.create!(:field_of_interest => interests)
 end
-
