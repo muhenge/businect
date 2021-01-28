@@ -10,8 +10,10 @@
 <% @users.each do |user| %>
       <div class="collection">
             <%= link_to user_path(user), class:"collection-item", :action => 'go' do%>
-              <%= image_tag user_avatar(user, 75), class:"circle responsive-img", :title => "Visit #{user.username.capitalize} profile",alt: "user image" %>
-              <%= link_to user.username.capitalize, user_path(user), class:"collection-item" %>
+              <div class="row valign-wrapper">
+                <div class="col s12 m12 l6"><%= image_tag user_avatar(user, 75), class:"circle responsive-img", :title => "Visit #{user.username.capitalize} profile",alt: "user image" %></div>
+                <div class="col s12 m12 l6"><%= user.username.capitalize %></div>
+              </div>
             <%end%>
       </div>
     <%end%>
