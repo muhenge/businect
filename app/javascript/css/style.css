@@ -12,6 +12,22 @@ nav {
     color: black !important;
 }
 
+.interest-post a {
+    color: teal;
+    padding: 12px;
+    border-radius: 3px;
+    border: 2px solid teal;
+}
+
+.interest-post a:focus {
+    color: white;
+    background-color: teal;
+}
+
+.interest-post {
+    margin-bottom: 12px;
+}
+
 p.notice {
     color: rgb(8, 151, 144);
     margin-top: 20vh;
