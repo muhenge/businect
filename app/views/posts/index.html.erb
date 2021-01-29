@@ -2,10 +2,9 @@
 
 
 
-        <div class="hide-on-large-only side-top">
+        <div class="hide-on-large-only side-top center-align">
                 <%= render 'shared/relation' %><br><br>
                 <%= link_to  "New Post", new_post_path %><br><br><br>
-                <%= link_to "Posts based on #{@user_interest.field_of_interest}", posts_by_interest_path(@user_interest) %>
         </div>
     
     <div class="container">
