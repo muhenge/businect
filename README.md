@@ -38,9 +38,9 @@ Give a ⭐️ if you like this project!
 ## Acknowledgements
 
 * [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
-* [Ruby on Rails](https://rubyonrails.org/)
+* [Ruby gems](https://rubygems.org/)
+* [Rails guides](https://guides.rubyonrails.org/)
 * [materializecss](materializecss.com/)
-* [Behance](https://www.behance.net/)
 * [Heroku](https://www.heroku.com/)
 * [Microverse](https://www.microverse.org/)
 * [Luxbar](https://balzss.github.io/luxbar/)
